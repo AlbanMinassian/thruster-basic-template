@@ -1,0 +1,33 @@
+# --------------------------------------------------------------------
+[package]
+# --------------------------------------------------------------------
+name = "{{crate_name}}"
+version = "0.1.0"
+authors = [{{authors}}]
+description = "{{project-name}} web site"
+readme = "README.md"
+license = "MIT"
+
+# --------------------------------------------------------------------
+[lib]
+# --------------------------------------------------------------------
+name = "myapplib"
+path = "src/lib.rs"
+
+# --------------------------------------------------------------------
+[[bin]]
+# --------------------------------------------------------------------
+name = "myapp"
+path = "src/main.rs"
+doc = false
+
+
+# --------------------------------------------------------------------
+# https://github.com/danreeves/cargo-cmd
+# Like npm scripts, but for cargo
+# example usage: ``cargo cmd watch``
+# --------------------------------------------------------------------
+[package.metadata.commands]
+watch = "cargo cmd watch_debug"
+watch_debug = "catflap -- cargo watch -x 'build' -x 'run'"
+watch_prod = "catflap -- cargo watch -x 'build --release' -x 'run --release'"
