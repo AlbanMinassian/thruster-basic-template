@@ -3,7 +3,7 @@
 # --------------------------------------------------------------------
 name = "{{crate_name}}"
 version = "0.1.0"
-authors = [{{authors}}]
+authors = ["{{authors}}"]
 description = "{{project-name}} web site"
 readme = "README.md"
 license = "MIT"
@@ -21,7 +21,6 @@ name = "myapp"
 path = "src/main.rs"
 doc = false
 
-
 # --------------------------------------------------------------------
 # https://github.com/danreeves/cargo-cmd
 # Like npm scripts, but for cargo
@@ -31,3 +30,15 @@ doc = false
 watch = "cargo cmd watch_debug"
 watch_debug = "catflap -- cargo watch -x 'build' -x 'run'"
 watch_prod = "catflap -- cargo watch -x 'build --release' -x 'run --release'"
+
+# --------------------------------------------------------------------
+[dependencies]
+# --------------------------------------------------------------------
+# thruster = { path = "../Thruster" }
+thruster = { git = "https://github.com/trezm/Thruster" }
+futures = "0.1.23"
+time = "0.1"
+log = "0.4"
+pretty_env_logger = "0.2"
+clap = "2.32.0"
+colored = "1.6"
