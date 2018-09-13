@@ -17,7 +17,7 @@ A minimal template for starting a [thruster](https://github.com/trezm/Thruster) 
 
 ## Install
 
-- ``git clone https://github.com/{{authors-git}}/{{project-name}}.git``
+- ``git clone https://github.com/{{authors}}/{{project-name}}.git``
 - ``cd {{project-name}}``
 - ``cargo run``
 - ``open http://localhost:4321``
