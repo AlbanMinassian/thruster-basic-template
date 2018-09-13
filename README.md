@@ -23,4 +23,23 @@ A minimal template for starting a [thruster](https://github.com/trezm/Thruster) 
 - ``cargo run``
 - ``open http://localhost:4321``
 
+## Develop
+
+### Watcher
+
+- install catflap + cargo-cmd + cargo-watch beforehand ``cargo install --force catflap cargo-cmd cargo-watch``
+- ``export RUST_LOG=myapp=trace`` - optional trace|debug|info|warn|error
+- ``export PORT=4321`` - optional, default 4321
+- ``cargo cmd watch_debug`` or ``cargo cmd watch`` (alias to ``watch_debug``)
+
+### Liverelaod
+
+> Firefox, Chrome, Edge but your html must contain the tag ``<script src="http://127.0.0.1:35729/livereload.js"></script>``
+
+- install [nodejs](https://nodejs.org) beforehand
+- ``npm install nodemon -g`` to add cmd ``nodemon``
+- ``npm install make-livereload -g`` to add cmd ``tiny-lr``
+- ``tiny-lr`` start livereload server, port=35729
+- navigate to http://localhost:4321
+- ``nodemon --delay 3000ms --watch target/debug/myapp --exec 'curl --noproxy "*" http://localhost:35729/changed?files=index.html'`` (adapt delay according to your compilation time)
 
