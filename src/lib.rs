@@ -16,7 +16,7 @@ use thruster::server::ThrusterServer;
 
 
 #[cfg_attr(tarpaulin, skip)]
-pub fn server(_protocol: &str, host: &str, port: &u16) -> Result<bool, Box<Error>> {
+pub fn server(_protocol: &str, host: &str, port: u16) -> Result<bool, Box<Error>> {
 
     // -------------------------------------------------------------------
     // init stdout log - usage ``export RUST_LOG=myapp=info``

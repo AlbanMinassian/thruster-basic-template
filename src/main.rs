@@ -37,6 +37,6 @@ fn main() {
   // start lib server
   // -------------------------------------------------------------------
   println!(" {}  {} > Starting server {}://{}:{}", "INFO".green(), "{{project-name}}".bright_white().bold(), &protocol, &host, &port);
-  let _result = myapplib::server(&protocol, &host, &port);
+  let _result = myapplib::server(&protocol, &host, port);
 
 }
