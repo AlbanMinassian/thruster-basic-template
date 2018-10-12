@@ -1,13 +1,13 @@
-use thruster::{BasicContext as Ctx, App};
+use thruster::{App, BasicContext as Ctx, Request};
 
 use routes;
 
-pub fn init() -> App<Ctx>  {
+pub fn init() -> App<Request, Ctx>  {
 
     // -------------------------------------------------------------------
     // app
     // -------------------------------------------------------------------
-    let mut app = App::<Ctx>::new();
+    let mut app = App::<Request, Ctx>::new();
 
     // -------------------------------------------------------------------
     // add middlewares
