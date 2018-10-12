@@ -18,7 +18,7 @@ pub fn middleware(mut context: Ctx, _chain: &MiddlewareChain<Ctx>) -> Middleware
   // -------------------------------------------------------------------
   context.set("Content-Type", "text/html");
   context.body = layouts::default::render(views::index::render());
-  context.cookie("SomeCookie", "Some Value!", CookieOptions::default());
+  context.cookie("SomeCookie", "Some Value!", &CookieOptions::default());
 
   // -------------------------------------------------------------------
   // send

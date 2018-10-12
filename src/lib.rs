@@ -32,7 +32,7 @@ pub fn server(_protocol: &str, host: &str, port: &u16) -> Result<bool, Box<Error
     // start server
     // -------------------------------------------------------------------
     let server = Server::new(app);
-    server.start("0.0.0.0", 4321);
+    server.start(host, port);
 
     // -------------------------------------------------------------------
     // return
