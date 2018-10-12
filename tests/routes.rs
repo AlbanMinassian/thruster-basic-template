@@ -6,7 +6,7 @@ use thruster::{testing};
 fn test_route_example_textplain() {
 
     let app = myapplib::app::init();
-    let result = testing::get(app, "/example/text");
+    let result = testing::get(&app, "/example/text");
     assert!(result.body == "Hello Text !");
 
 }
@@ -15,7 +15,7 @@ fn test_route_example_textplain() {
 fn test_route_example_basicjson() {
 
     let app = myapplib::app::init();
-    let result = testing::get(app, "/example/json");
+    let result = testing::get(&app, "/example/json");
     assert!(result.body == "{\"Hello\":\"Json !\"}");
 
 }
@@ -24,7 +24,7 @@ fn test_route_example_basicjson() {
 fn test_route_root_redirect() {
 
     let app = myapplib::app::init();
-    let _result = testing::get(app, "/");
+    let _result = testing::get(&app, "/");
 
 }
 
@@ -32,7 +32,7 @@ fn test_route_root_redirect() {
 fn test_route_index() {
 
     let app = myapplib::app::init();
-    let _result = testing::get(app, "/index.html");
+    let _result = testing::get(&app, "/index.html");
 
 }
 
@@ -40,6 +40,6 @@ fn test_route_index() {
 fn test_route_notexist() {
 
     let app = myapplib::app::init();
-    let _result = testing::get(app, "/notexist");
+    let _result = testing::get(&app, "/notexist");
 
 }

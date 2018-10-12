@@ -11,9 +11,12 @@ mod views;
 pub mod app; // ``pub`` to allow tests
 
 use std::error::Error;
+use thruster::builtins::server::Server;
+use thruster::server::ThrusterServer;
+
 
 #[cfg_attr(tarpaulin, skip)]
-pub fn server(_protocol: &str, host: &str, port: &u16) -> Result<bool, Box<Error>> {
+pub fn server(_protocol: &str, host: &str, port: u16) -> Result<bool, Box<Error>> {
 
     // -------------------------------------------------------------------
     // init stdout log - usage ``export RUST_LOG=myapp=info``
@@ -28,7 +31,8 @@ pub fn server(_protocol: &str, host: &str, port: &u16) -> Result<bool, Box<Error
     // -------------------------------------------------------------------
     // start server
     // -------------------------------------------------------------------
-    thruster::App::start(app, host, *port);
+    let server = Server::new(app);
+    server.start(host, port);
 
     // -------------------------------------------------------------------
     // return
